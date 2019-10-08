@@ -1,0 +1,58 @@
+{
+  "name": "@jfeferman/react-d3-scatter",
+  "version": "0.1.0",
+  "description": "React d3 scatter plot",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "rm -rf dist/ && npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\"",
+    "prepublishOnly": "npm run build",
+    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jfeferman/react-d3-scatter.git"
+  },
+  "keywords": [
+    "d3",
+    "react-d3",
+    "react-scatter",
+    "scatter-plot"
+  ],
+  "author": "Julio Feferman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jfeferman/react-d3-scatter/issues"
+  },
+  "homepage": "https://github.com/jfeferman/react-d3-scatter#readme",
+  "dependencies": {
+    "react": "^16.10.2",
+    "d3": "^5.12.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.6.0",
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
+    "@types/styled-components": "^4.1.19",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "typescript": "^3.6.3",
+    "prettier": "^1.18.2"
+  }
+}
