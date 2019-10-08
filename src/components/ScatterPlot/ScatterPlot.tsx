@@ -4,15 +4,14 @@ import XYAxis from '../XYAxis'
 import DataAgreggate from '../DataAgreggate'
 import { ScatterPlotProps } from './types'
 
-const settings = {
-  width: 800,
-  height: 500,
-  padding: 80,
-}
-
 const ScatterPlot: React.SFC<ScatterPlotProps> = (props) => {
 
   const { data } = props
+  const settings = {
+    width: 800,
+    height: 500,
+    padding: 80,
+  }
 
   /**
    * Determine the x scale

@@ -1,5 +1,5 @@
 {
-  "name": "@jfeferman/react-d3-scatter",
+  "name": "react-d3-scatter",
   "version": "0.1.0",
   "description": "React d3 scatter plot",
   "main": "./dist/index.js",
@@ -33,8 +33,10 @@
   },
   "homepage": "https://github.com/jfeferman/react-d3-scatter#readme",
   "dependencies": {
+    "d3": "^5.12.0",
     "react": "^16.10.2",
-    "d3": "^5.12.0"
+    "react-dom": "^16.10.2",
+    "react-scripts": "^3.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
@@ -46,7 +48,6 @@
     "@babel/preset-typescript": "^7.6.0",
     "@types/react": "^16.9.5",
     "@types/react-dom": "^16.9.1",
-    "@types/styled-components": "^4.1.19",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
