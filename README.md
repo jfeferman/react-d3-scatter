@@ -23,7 +23,7 @@ const data = [[1,1], [2,10], [5,16]]
 
 
 ```javascript
-import { ScatterPlot } from 'react-d3-scatter'
+import { ScatterPlot } from 'react-d3-plotter'
 ...
 <ScatterPlot data={data} />
 ```
