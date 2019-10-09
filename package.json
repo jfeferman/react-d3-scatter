@@ -1,7 +1,7 @@
 {
-  "name": "react-d3-scatter",
+  "name": "react-d3-plotter",
   "version": "0.1.0",
-  "description": "React d3 scatter plot",
+  "description": "React wrapper for d3 visualizations",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jfeferman/react-d3-scatter.git"
+    "url": "https://github.com/jfeferman/react-d3-plotter.git"
   },
   "keywords": [
     "d3",
@@ -29,9 +29,9 @@
   "author": "Julio Feferman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jfeferman/react-d3-scatter/issues"
+    "url": "https://github.com/jfeferman/react-d3-plotter/issues"
   },
-  "homepage": "https://github.com/jfeferman/react-d3-scatter#readme",
+  "homepage": "https://github.com/jfeferman/react-d3-plotter#readme",
   "peerDependencies": {
     "react": "^16.0.0-0",
     "d3": ">=5"
