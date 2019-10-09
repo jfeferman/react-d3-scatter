@@ -34,5 +34,5 @@ import { ScatterPlot } from 'react-d3-scatter'
 | - | - | - | - |
 | data | `[]` | array | Array of x, y value paris |
 | width | 600 | number | The width of the scatter plot in `px` |
-| width | 400 | number | The height of the scatter plot in `px` |
+| height | 400 | number | The height of the scatter plot in `px` |
 | padding | 60 | number | A padding value in `px` to properly display axis |
