@@ -1,13 +1,17 @@
-import React, { useEffect, useRef } from 'react'
+import React, { Component } from 'react'
 import * as d3 from 'd3'
 import { AxisProps } from './types'
 
-const Axis: React.SFC<AxisProps> = (props) => {
-  const axisContainer = useRef(null);
+class Axis extends Component<AxisProps> {
+  private axisContainer = React.createRef<SVGGElement>();
 
-  function renderAxis() {
-    const { orient, scale } = props
-    const node = axisContainer.current
+  componentDidMount() {
+    this.renderAxis();
+  }
+
+  renderAxis = () => {
+    const { orient, scale } = this.props
+    const node = this.axisContainer.current
     let axis
     if (orient === 'bottom') {
       axis = d3.axisBottom()
@@ -22,15 +26,12 @@ const Axis: React.SFC<AxisProps> = (props) => {
     d3.select(node).call(axis)
   }
 
-  useEffect(() => {
-    renderAxis();
-  });
-
-  const { translate } = props
-
-  return (
-    <g className="axis" ref={axisContainer} transform={translate} />
-  )
+  render() {
+    const { translate } = this.props
+    return (
+      <g className="axis" ref={this.axisContainer} transform={translate} />
+    )
+  }
 }
 
 export default Axis
