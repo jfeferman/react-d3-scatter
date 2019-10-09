@@ -5,18 +5,19 @@ import DataAgreggate from '../DataAgreggate'
 import { ScatterPlotProps } from './types'
 
 const ScatterPlot: React.SFC<ScatterPlotProps> = (props) => {
+  let { data } = props
+  data = data ? data : [];
 
   const {
-    data,
     width,
     height,
     padding,
-  } = props
+  } = props 
 
   const settings = {
-    width: width || 800,
-    height: height || 500,
-    padding: padding || 80,
+    width: width || 600,
+    height: height || 400,
+    padding: padding || 60,
   }
 
   /**
