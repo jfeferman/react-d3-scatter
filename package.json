@@ -14,7 +14,9 @@
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\"",
     "prepublishOnly": "npm run build",
-    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'"
+    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'",
+    "test": "jest",
+    "test:watch": "npm t -- --watch"
   },
   "repository": {
     "type": "git",
@@ -23,8 +25,10 @@
   "keywords": [
     "d3",
     "react-d3",
-    "react-scatter",
-    "scatter-plot"
+    "react-d3-plotter",
+    "react d3 visualizations",
+    "react d3 graphs",
+    "data visualization"
   ],
   "author": "Julio Feferman",
   "license": "MIT",
@@ -32,10 +36,6 @@
     "url": "https://github.com/jfeferman/react-d3-plotter/issues"
   },
   "homepage": "https://github.com/jfeferman/react-d3-plotter#readme",
-  "peerDependencies": {
-    "react": "^16.0.0-0",
-    "d3": ">=5"
-  },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
@@ -44,14 +44,36 @@
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.6.0",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.18",
     "@types/react": "^16.9.5",
     "@types/react-dom": "^16.9.1",
+    "@types/react-test-renderer": "^16.9.0",
+    "@typescript-eslint/eslint-plugin": "^2.3.3",
+    "@typescript-eslint/parser": "^2.3.3",
+    "babel-jest": "^24.9.0",
+    "enzyme-to-json": "^3.4.2",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
-    "typescript": "^3.6.3",
-    "prettier": "^1.18.2"
+    "jest": "^24.9.0",
+    "jest-runner-eslint": "^0.7.5",
+    "prettier": "^1.18.2",
+    "react-test-renderer": "^16.10.2",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "d3": "^5.12.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "peerDependencies": {
+    "d3": "5.x"
   }
 }

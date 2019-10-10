@@ -6,13 +6,13 @@ import { ScatterPlotProps } from './types'
 
 const ScatterPlot: React.SFC<ScatterPlotProps> = (props) => {
   let { data } = props
-  data = data ? data : [];
+  data = data || [];
 
   const {
     width,
     height,
     padding,
-  } = props 
+  } = props
 
   const settings = {
     width: width || 600,

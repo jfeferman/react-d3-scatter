@@ -6,7 +6,7 @@ class Axis extends Component<AxisProps> {
   private axisContainer = React.createRef<SVGGElement>();
 
   componentDidMount() {
-    this.renderAxis();
+    this.renderAxis()
   }
 
   renderAxis = () => {
