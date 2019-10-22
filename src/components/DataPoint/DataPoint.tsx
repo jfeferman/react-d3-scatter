@@ -9,10 +9,6 @@ const DataPoint: React.SFC<DataPointProps> = (props) => {
     radius,
   } = props
 
-  if (!coords) {
-    return null
-  }
-
   return (
     <circle
       cx={xScale(coords[0])}

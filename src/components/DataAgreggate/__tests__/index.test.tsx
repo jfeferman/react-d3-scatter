@@ -1,21 +1,44 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import * as TestRenderer from 'react-test-renderer';
 import {
   mockData,
   getXScale,
   getYScale,
 } from '../../../utils/testUtil'
-import DataPoint from '../../DataPoint'
+import DataAgreggate from '..'
 
-describe('components/DataPoint', () => {
-  it('matches the snapshot of the component', () => {
-    const wrapper = renderer.create(
-      <DataPoint
-        coords={mockData[0]}
-        xScale={getXScale}
-        yScale={getYScale}
+describe('components/DataAgreggate', () => {
+  let renderer: TestRenderer.ReactTestRenderer;
+  let instance: TestRenderer.ReactTestInstance;
+
+  beforeAll(() => {
+    renderer = TestRenderer.create(
+      <DataAgreggate
+        data={mockData}
+        xScale={getXScale()}
+        yScale={getYScale()}
       />,
-    ).toJSON()
-    expect(wrapper).toMatchSnapshot()
+    )
+    instance = renderer.root;
   })
+
+  it('matches the snapshot of the component', () => {
+    expect(renderer.toJSON()).toMatchSnapshot()
+  })
+
+  it('verifies there are two circules', () => {
+    const dataAgreggate = instance.findByType('g')
+    expect(dataAgreggate.props.children).toHaveLength(2)
+  });
+
+  it('verifies there are no children when no data is passed', () => {
+    const renderer = TestRenderer.create(
+      <DataAgreggate
+        data={[]}
+        xScale={getXScale()}
+        yScale={getYScale()}
+      />,
+    )
+    expect(renderer.toJSON()).toMatchSnapshot()
+  });
 })

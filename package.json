@@ -16,7 +16,8 @@
     "prepublishOnly": "npm run build",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'",
     "test": "jest",
-    "test:watch": "npm t -- --watch"
+    "test:watch": "npm t -- --watch",
+    "test:coverage": "jest --verbose --coverage"
   },
   "repository": {
     "type": "git",
