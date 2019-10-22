@@ -1,53 +1,37 @@
 import React from 'react'
-import * as d3 from 'd3'
 import XYAxis from '../XYAxis'
 import DataAgreggate from '../DataAgreggate'
 import { ScatterPlotProps } from './types'
+import { getXScale, getYScale } from '../../utils/utils';
+import { IPlotSettings } from '../../utils/types'
 
 const ScatterPlot: React.SFC<ScatterPlotProps> = (props) => {
   let { data } = props
   data = data || [];
 
+  // User defined on ScatterPlot instance
   const {
     width,
     height,
     padding,
+    radius,
   } = props
 
-  const settings = {
+  const settings: IPlotSettings = {
     width: width || 600,
     height: height || 400,
     padding: padding || 60,
+    radius: radius || 2,
   }
 
-  /**
-   * Determine the x scale
-   */
-  function getXScale() {
-    const xMax = d3.max(data, (d: Array<number>) => d[0])
-    return d3.scaleLinear()
-      .domain([0, xMax])
-      .rangeRound([settings.padding, (settings.width - settings.padding * 2)])
-  }
-
-  /**
-   * Determine the y scale
-   */
-  function getYScale() {
-    const yMax = d3.max(data, (d: Array<number>) => d[1])
-    return d3.scaleLinear()
-      .domain([0, yMax])
-      .rangeRound([settings.height - settings.padding, settings.padding])
-  }
-
-  const xScale = getXScale();
-  const yScale = getYScale();
+  const xScale = getXScale(data, settings);
+  const yScale = getYScale(data, settings);
 
   return (
     <div className="graphContainer">
       <svg width={settings.width} height={settings.height}>
         <DataAgreggate xScale={xScale} yScale={yScale} data={data} {...settings} />
-        <XYAxis xScale={xScale} yScale={yScale} {...settings} />
+        <XYAxis xScale={xScale} yScale={yScale} settings={settings} />
       </svg>
     </div>
   )

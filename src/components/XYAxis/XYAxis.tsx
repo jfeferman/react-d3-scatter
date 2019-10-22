@@ -4,16 +4,20 @@ import { XYAxisProps } from './types'
 
 const XYAxis: React.SFC<XYAxisProps> = (props) => {
   const {
-    height,
-    padding,
+    settings,
     xScale,
     yScale,
   } = props
 
+  const {
+    height,
+    padding,
+  } = settings;
+
   return (
     <g className="xy-axis">
       <Axis
-        translate={`translate(0, ${height - padding})`}
+        translate={`translate(0, ${height! - padding!})`}
         scale={xScale}
         orient="bottom"
       />

@@ -1,5 +1,4 @@
-export type ScatterPlotProps = {
-  data: Array<Array<number>>;
+export interface IPlotSettings {
   width?: number;
   height?: number;
   padding?: number;

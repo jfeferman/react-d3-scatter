@@ -9,7 +9,7 @@ export const mockData = [
   [0.33767329, 503.22],
 ]
 
-export const settings = {
+const settings = {
   width: 600,
   height: 400,
   padding: 60,

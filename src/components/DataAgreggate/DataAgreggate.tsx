@@ -7,12 +7,19 @@ const DataAgreggate: React.SFC<DataAgreggateProps> = (props) => {
     data,
     xScale,
     yScale,
+    radius,
   } = props
 
   // Create an individual data point
   const createDataPoint = (datum: Array<number>, index: number) => {
     return (
-      <DataPoint key={index} xScale={xScale} yScale={yScale} coords={datum} />
+      <DataPoint
+        key={index}
+        xScale={xScale}
+        yScale={yScale}
+        coords={datum}
+        radius={radius}
+      />
     )
   }
 

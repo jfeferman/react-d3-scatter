@@ -28,7 +28,7 @@ import { ScatterPlot } from 'react-d3-plotter'
 <ScatterPlot data={data} />
 ```
 
-## Props
+### Props
 
 | props | default | type | description |
 | - | - | - | - |
@@ -36,3 +36,4 @@ import { ScatterPlot } from 'react-d3-plotter'
 | width | 600 | number | The width of the scatter plot in `px` |
 | height | 400 | number | The height of the scatter plot in `px` |
 | padding | 60 | number | A padding value in `px` to properly display axis |
+| radius | 2 | number | The radius of data points in `px` |

@@ -6,6 +6,7 @@ const DataPoint: React.SFC<DataPointProps> = (props) => {
     coords,
     xScale,
     yScale,
+    radius,
   } = props
 
   if (!coords) {
@@ -16,7 +17,7 @@ const DataPoint: React.SFC<DataPointProps> = (props) => {
     <circle
       cx={xScale(coords[0])}
       cy={yScale(coords[1])}
-      r={2}
+      r={radius}
       key={Math.random() * 1}
     />
   )

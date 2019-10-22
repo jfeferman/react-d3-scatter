@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/Axis checks the x axis 1`] = `
+exports[`components/Axis matches the snapshot of the x axis 1`] = `
 <g
   className="axis"
   transform="0"
 />
 `;
 
-exports[`components/Axis checks the y axis 1`] = `
+exports[`components/Axis matches the snapshot of the y axis 1`] = `
 <g
   className="axis"
   transform="0"

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { shallow } from 'enzyme'
+import renderer from 'react-test-renderer'
 import Axis from '../Axis'
 import {
   getXScale,
@@ -7,25 +7,25 @@ import {
 } from '../../../utils/testUtil'
 
 describe('components/Axis', () => {
-  it('checks the x axis', () => {
-    const wrapper = shallow(
+  it('matches the snapshot of the x axis', () => {
+    const wrapper = renderer.create(
       <Axis
         orient="bottom"
         scale={getXScale()}
         translate="0"
       />,
-    )
+    ).toJSON()
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('checks the y axis', () => {
-    const wrapper = shallow(
+  it('matches the snapshot of the y axis', () => {
+    const wrapper = renderer.create(
       <Axis
         orient=""
         scale={getYScale()}
         translate="0"
       />,
-    )
+    ).toJSON()
     expect(wrapper).toMatchSnapshot()
   })
 })
