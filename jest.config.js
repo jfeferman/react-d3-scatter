@@ -8,5 +8,5 @@ module.exports = {
     '^.+\\.tsx?$': 'babel-jest',
   },
   snapshotSerializers: ['enzyme-to-json/serializer'],
-  setupFilesAfterEnv: ['<rootDir>/src/utils/setupEnzyme.ts'],
+  setupFilesAfterEnv: ['<rootDir>/src/config/enzyme.ts'],
 };

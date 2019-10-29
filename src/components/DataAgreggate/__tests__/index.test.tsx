@@ -32,7 +32,7 @@ describe('components/DataAgreggate', () => {
   });
 
   it('verifies there are no children when no data is passed', () => {
-    const renderer = TestRenderer.create(
+    renderer = TestRenderer.create(
       <DataAgreggate
         data={[]}
         xScale={getXScale()}
