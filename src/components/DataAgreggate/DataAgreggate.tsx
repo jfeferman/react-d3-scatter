@@ -1,15 +1,14 @@
-import React from 'react'
-import DataPoint from '../DataPoint'
-import { DataAgreggateProps } from './types'
+import { DataPoint } from '../DataPoint'
 
-const DataAgreggate: React.SFC<DataAgreggateProps> = (props) => {
-  const {
-    data,
-    xScale,
-    yScale,
-    radius,
-  } = props
+export type DataAgreggateProps = {
+  data: number[]
+  xScale: () => void
+  yScale: () => void
+  radius?: number
+}
 
+
+export const DataAgreggate = ({data, xScale, yScale, radius}: DataAgreggateProps) => {
   // Create an individual data point
   const createDataPoint = (datum: Array<number>, index: number) => {
     return (
@@ -37,5 +36,3 @@ const DataAgreggate: React.SFC<DataAgreggateProps> = (props) => {
     </g>
   )
 }
-
-export default DataAgreggate

@@ -1,21 +1,19 @@
 import React from 'react'
-import XYAxis from '../XYAxis'
-import DataAgreggate from '../DataAgreggate'
-import { ScatterPlotProps } from './types'
+import { XYAxis } from '../XYAxis'
+import { DataAgreggate } from '../DataAgreggate'
 import { getXScale, getYScale } from '../../utils/utils';
 import { IPlotSettings } from '../../utils/types'
 
-const ScatterPlot: React.SFC<ScatterPlotProps> = (props) => {
-  let { data } = props
-  data = data || [];
+export type ScatterPlotProps = {
+  data: number[]
+  width?: number
+  height?: number
+  padding?: number
+  radius?: number
+}
 
-  // User defined on ScatterPlot instance
-  const {
-    width,
-    height,
-    padding,
-    radius,
-  } = props
+export const ScatterPlot = ({ data, width, height, padding, radius}: ScatterPlotProps) => {
+  data = data || [];
 
   const settings: IPlotSettings = {
     width: width || 600,
@@ -36,5 +34,3 @@ const ScatterPlot: React.SFC<ScatterPlotProps> = (props) => {
     </div>
   )
 }
-
-export default ScatterPlot

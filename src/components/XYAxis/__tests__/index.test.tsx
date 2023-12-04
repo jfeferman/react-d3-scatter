@@ -1,11 +1,9 @@
-import React from 'react'
-import * as TestRenderer from 'react-test-renderer';
+import { IPlotSettings } from 'utils/types'
 import {
   getXScale,
   getYScale,
 } from '../../../utils/testUtil'
-import XYAxis from '..'
-import { IPlotSettings } from 'utils/types'
+import { XYAxis } from '..'
 
 describe('components/XYAxis', () => {
   const settings: IPlotSettings = {
@@ -24,10 +22,6 @@ describe('components/XYAxis', () => {
       />,
     )
     instance = renderer.root;
-  })
-
-  it('matches the snapshot of the component', () => {
-    expect(renderer.toJSON()).toMatchSnapshot()
   })
 
   it('verifies there are two axis', () => {

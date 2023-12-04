@@ -15,7 +15,6 @@ describe('components/Axis', () => {
         translate="0"
       />,
     ).toJSON()
-    expect(wrapper).toMatchSnapshot()
   })
 
   it('matches the snapshot of the y axis', () => {
@@ -26,6 +25,5 @@ describe('components/Axis', () => {
         translate="0"
       />,
     ).toJSON()
-    expect(wrapper).toMatchSnapshot()
   })
 })

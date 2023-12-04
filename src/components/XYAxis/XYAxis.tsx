@@ -1,18 +1,18 @@
 import React from 'react'
 import Axis from '../Axis'
-import { XYAxisProps } from './types'
+import { IPlotSettings } from "../../utils/types"
 
-const XYAxis: React.SFC<XYAxisProps> = (props) => {
-  const {
-    settings,
-    xScale,
-    yScale,
-  } = props
+export type XYAxisProps = {
+  xScale: Function;
+  yScale: Function;
+  settings: IPlotSettings;
+}
 
+export const XYAxis = ({ xScale, yScale, settings }: XYAxisProps) => {
   const {
     height,
     padding,
-  } = settings;
+  } = settings
 
   return (
     <g className="xy-axis">
