@@ -1,11 +1,11 @@
 import React from 'react'
 import { Axis } from '../Axis'
-import { IPlotSettings } from '../../utils/types'
+import { ScatterPlotSettings } from 'components/ScatterPlot'
 
 export type XYAxisProps = {
   xScale: () => number
   yScale: () => number
-  settings: IPlotSettings
+  settings: ScatterPlotSettings
 }
 
 export const XYAxis = ({ xScale, yScale, settings }: XYAxisProps) => {

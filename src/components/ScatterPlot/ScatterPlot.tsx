@@ -2,7 +2,6 @@ import React from 'react'
 import { XYAxis } from '../XYAxis'
 import { DataAgreggate } from '../DataAgreggate'
 import { getXScale, getYScale } from '../../utils/utils'
-import { IPlotSettings } from '../../utils/types'
 
 export type ScatterPlotProps = {
   data: number[][]
@@ -12,10 +11,15 @@ export type ScatterPlotProps = {
   radius: number
 }
 
-export const ScatterPlot = ({ data, width, height, padding, radius = 2 }: ScatterPlotProps) => {
-  data = data || []
+export type ScatterPlotSettings = {
+  width?: number
+  height?: number
+  padding?: number
+  radius?: number
+}
 
-  const settings: IPlotSettings = {
+export const ScatterPlot = ({ data = [], width, height, padding, radius = 2 }: ScatterPlotProps) => {
+  const settings: ScatterPlotSettings = {
     width: width || 600,
     height: height || 400,
     padding: padding || 60,
