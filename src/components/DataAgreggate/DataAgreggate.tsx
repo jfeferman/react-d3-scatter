@@ -1,9 +1,9 @@
 import { DataPoint } from '../DataPoint'
 
 export type DataAgreggateProps = {
-  data: number[]
-  xScale: () => void
-  yScale: () => void
+  data: number[][]
+  xScale: () => number
+  yScale: () => number
   radius: number
 }
 

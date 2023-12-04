@@ -1,30 +1,30 @@
-import { useEffect } from 'react'
+import { useEffect, createRef } from 'react'
 import * as d3 from 'd3'
 
 export type AxisProps = {
-  orient: string
+  orientation: 'left' | 'bottom'
   scale: () => void
   translate: string
 }
 
-export const Axis = ({ orient, scale, translate }: AxisProps) => {
-  const axisContainer = React.createRef<SVGGElement>()
+export const Axis = ({ orientation, scale, translate }: AxisProps) => {
+  const axisContainer = createRef<SVGGElement>()
 
   useEffect(() => {
-    renderAxis()
-  }, [])
+    const renderAxis = () => {
+      const node = axisContainer.current
+      let axis
+      if (orientation === 'bottom') {
+        axis = d3.axisBottom().ticks(5).scale(scale)
+      } else {
+        axis = d3.axisLeft().ticks(5).scale(scale)
+      }
 
-  const renderAxis = () => {
-    const node = axisContainer.current
-    let axis
-    if (orient === 'bottom') {
-      axis = d3.axisBottom().ticks(5).scale(scale)
-    } else {
-      axis = d3.axisLeft().ticks(5).scale(scale)
+      d3.select(node).call(axis)
     }
 
-    d3.select(node).call(axis)
-  }
+    renderAxis()
+  }, [axisContainer, orientation, scale])
 
   return <g className="axis" ref={axisContainer} transform={translate} />
 }

@@ -5,7 +5,7 @@ import { getXScale, getYScale } from '../../utils/utils'
 import { IPlotSettings } from '../../utils/types'
 
 export type ScatterPlotProps = {
-  data: number[]
+  data: number[][]
   width?: number
   height?: number
   padding?: number
@@ -34,3 +34,5 @@ export const ScatterPlot = ({ data, width, height, padding, radius = 2 }: Scatte
     </div>
   )
 }
+
+export default ScatterPlot

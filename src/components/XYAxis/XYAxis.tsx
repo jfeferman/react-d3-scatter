@@ -3,8 +3,8 @@ import { Axis } from '../Axis'
 import { IPlotSettings } from '../../utils/types'
 
 export type XYAxisProps = {
-  xScale: Function
-  yScale: Function
+  xScale: () => number
+  yScale: () => number
   settings: IPlotSettings
 }
 
@@ -13,8 +13,8 @@ export const XYAxis = ({ xScale, yScale, settings }: XYAxisProps) => {
 
   return (
     <g className="xy-axis">
-      <Axis translate={`translate(0, ${height! - padding!})`} scale={xScale} orient="bottom" />
-      <Axis translate={`translate(${padding}, 0)`} scale={yScale} orient="left" />
+      <Axis translate={`translate(0, ${height! - padding!})`} scale={xScale} orientation="bottom" />
+      <Axis translate={`translate(${padding}, 0)`} scale={yScale} orientation="left" />
     </g>
   )
 }
