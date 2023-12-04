@@ -1,7 +1,7 @@
 type DataPointProps = {
   coords: number[]
-  xScale: () => void
-  yScale: () => void
+  xScale: () => number
+  yScale: () => number
   radius: number
 }
 

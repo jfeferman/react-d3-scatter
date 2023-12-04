@@ -4,13 +4,13 @@ export type DataAgreggateProps = {
   data: number[]
   xScale: () => void
   yScale: () => void
-  radius?: number
+  radius: number
 }
 
 
 export const DataAgreggate = ({data, xScale, yScale, radius}: DataAgreggateProps) => {
   // Create an individual data point
-  const createDataPoint = (datum: Array<number>, index: number) => {
+  const createDataPoint = (datum: number[], index: number) => {
     return (
       <DataPoint
         key={index}
