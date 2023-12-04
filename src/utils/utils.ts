@@ -8,9 +8,10 @@ import { IPlotSettings } from './types'
  */
 export const getXScale = (data: number[][], settings: IPlotSettings) => {
   const xMax = d3.max(data, (d: number[]) => d[0])
-  return d3.scaleLinear()
+  return d3
+    .scaleLinear()
     .domain([0, xMax])
-    .rangeRound([settings.padding, (settings.width! - settings.padding! * 2)])
+    .rangeRound([settings.padding, settings.width! - settings.padding! * 2])
 }
 
 /**
@@ -20,7 +21,8 @@ export const getXScale = (data: number[][], settings: IPlotSettings) => {
  */
 export const getYScale = (data: number[][], settings: IPlotSettings) => {
   const yMax = d3.max(data, (d: number[]) => d[1])
-  return d3.scaleLinear()
+  return d3
+    .scaleLinear()
     .domain([0, yMax])
     .rangeRound([settings.height! - settings.padding!, settings.padding])
 }

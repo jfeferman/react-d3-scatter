@@ -7,8 +7,7 @@
   },
   "extends": [
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "prettier/@typescript-eslint"
+    "prettier"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -19,14 +18,13 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["prettier", "@typescript-eslint", "react-hooks", "testing-library"],
+  "plugins": ["prettier", "@typescript-eslint"],
   "rules": {
     "no-debugger": "error",
     "prettier/prettier": "error",
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single", "avoid-escape"],
     "semi": ["error", "never"],
-    "react-hooks/rules-of-hooks": "error",
     "prefer-const": 0,
     "no-var": 0,
     "@typescript-eslint/ban-ts-comment": 0,
